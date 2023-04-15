@@ -13,4 +13,4 @@ main.o: main.c $(HDR)
 	$(CC) $(CFLAGS) -c main.c -o main.o
 
 clean:
-	rm -f $(OBJ) hipercampos
+	rm -f $(OBJ) hipercampos output.txt

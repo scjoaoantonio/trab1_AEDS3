@@ -2,6 +2,8 @@
 #define RETAS_H
 #include "./ponto.h"
 
+//Função para ver se tem interseções
+//Utiliza os coeficientes angulares dos angulos formados pelas retas
 int temIntersecao(Ponto P1, Ponto P2, Ponto A, Ponto B) {
     
     // Coeficiente angular
@@ -12,17 +14,17 @@ int temIntersecao(Ponto P1, Ponto P2, Ponto A, Ponto B) {
     if (P2.x - P1.x != 0) {
         coefangP = (P2.y - P1.y) / (P2.x - P1.x); //P1(n) e P2(n)
     } else {
-        coefangP = 999.0;
+        coefangP = 9999.0; //valor alto para nao ter divisao por 0
     }
     if (P1.x - A.x != 0) {
         coefangA = (P1.y - A.y) / (P1.x - A.x); //P1(n) e A
     } else {
-        coefangA = 999.0;
+        coefangA = 9999.0; //valor alto para nao ter divisao por 0
     }
     if (P1.x - B.x != 0) {
         coefangB = (P1.y - B.y) / (P1.x - B.x); //P1(n) e B
     } else {
-        coefangB = 999.0;
+        coefangB = 9999.0; //valor alto para nao ter divisao por 0
     }
 
     // Verifica se há interseção fora das âncoras
@@ -33,6 +35,7 @@ int temIntersecao(Ponto P1, Ponto P2, Ponto A, Ponto B) {
     }
 }
 
+//calculando o maximo de interseções ocorridas
 int maxIntersecao(Ponto * Pontos, int n, Ponto A, Ponto B) {
     int max_intersecao = 0;
     int i, j;

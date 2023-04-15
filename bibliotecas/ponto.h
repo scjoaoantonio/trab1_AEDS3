@@ -1,6 +1,7 @@
 #ifndef PONTO_H
 #define PONTO_H
 
+//Criação de pontos (x,y)
 typedef struct {
   int x;
   int y;
